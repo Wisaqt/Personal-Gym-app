@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no">
+  <title>My Gym Log</title>
+
+
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Gym Log">
+  <meta name="theme-color" content="#0c0e14">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/svg+xml" href="icon.svg">
+  <link rel="apple-touch-icon" href="icon.svg">
+  <link rel="apple-touch-icon" sizes="192x192" href="icon-192.png">
+  <link rel="apple-touch-icon" sizes="512x512" href="icon-512.png">
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="css/style.css?v=4">
+</head>
+<body>
+  <div id="offlineBanner" class="offline-banner" style="display:none;">
+    ⚡ Offline Mode — Showing cached data
+  </div>
+
+  <header class="app-header">
+    <div class="brand">
+      <h1>My Gym Log</h1>
+      <div class="header-sub-row" style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+        <span class="profile-badge" id="profileBadge" style="display:none;"></span>
+        <span class="date-sub" id="headerDate"></span>
+      </div>
+    </div>
+    <div class="header-actions">
+      <button class="btn-switch" id="switchProfileBtn" aria-label="Switch Profile" style="display:none;">⇄ Switch</button>
+      <button class="theme-toggle" id="themeBtn" aria-label="Toggle theme">🌓</button>
+    </div>
+  </header>
+  
+  <main id="app"></main>
+
+  <script src="js/app.js?v=4"></script>
+  <script>
+    (function() {
+      var d = new Date();
+      var el = document.getElementById("headerDate");
+      if (el) el.textContent = d.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('sw.js');
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

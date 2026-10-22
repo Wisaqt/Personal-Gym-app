@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <rect width="512" height="512" rx="112" fill="#14161a"/>
+  <!-- Dumbbell illustration -->
+  <g fill="#ef5a52">
+    <!-- Center bar -->
+    <rect x="186" y="240" width="140" height="32" rx="8"/>
+    <!-- Left inner plate -->
+    <rect x="156" y="196" width="30" height="120" rx="10"/>
+    <!-- Left outer plate -->
+    <rect x="120" y="166" width="30" height="180" rx="10"/>
+    <!-- Left small rim plate -->
+    <rect x="88" y="206" width="26" height="100" rx="8"/>
+    <!-- Right inner plate -->
+    <rect x="326" y="196" width="30" height="120" rx="10"/>
+    <!-- Right outer plate -->
+    <rect x="362" y="166" width="30" height="180" rx="10"/>
+    <!-- Right small rim plate -->
+    <rect x="398" y="206" width="26" height="100" rx="8"/>
+  </g>
+</svg>
